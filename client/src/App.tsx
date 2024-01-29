@@ -19,11 +19,11 @@ function App() {
   }
 
   return (
-    <div className="w-full h-screen bg-red-400 flex flex-col">
-      <header className="w-full h-auto bg-green-300 py-3 px-2">
-        <h2 className="text-2xl">File-Sharing</h2>
+    <div className="w-full h-screen bg-slate-600 flex flex-col">
+      <header className="w-full h-auto py-3 px-2">
+        <h2 className="text-2xl text-center text-white">File-Sharing</h2>
       </header>
-      <main className="w-full h-auto flex-auto bg-slate-600 flex justify-center items-center flex-col">
+      <main className="w-full h-auto flex-auto flex justify-center items-center flex-col">
         <div className="w-[600px] flex items-center justify-center">
           <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -34,13 +34,14 @@ function App() {
               <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
             </div>
             <input onChange={(e) => {
+              // @ts-ignore
               fileSharing(e.target.files[0])
             }} id="dropzone-file" type="file" className="hidden" />
           </label>
         </div>
         {linkShow && (
-          <div className="mt-3">
-            <a href={link}> {link}</a>
+          <div className="mt-3 text-white">
+            Link: <a href={link}> {link}</a>
           </div>
         )}
       </main>
